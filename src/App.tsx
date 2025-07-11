@@ -279,21 +279,21 @@ const HealthTile: React.FC<{ label: string; value: number | string; icon: React.
   variant
 }) => {
   const variantStyles = {
-    success: 'bg-emerald-50 border-emerald-200/60 text-emerald-800 hover:bg-emerald-100 hover:border-emerald-300 hover:shadow-sm',
-    warning: 'bg-amber-50 border-amber-200/60 text-amber-800 hover:bg-amber-100 hover:border-amber-300 hover:shadow-sm',
-    error: 'bg-red-50 border-red-200/60 text-red-800 hover:bg-red-100 hover:border-red-300 hover:shadow-sm',
-    info: 'bg-slate-50 border-slate-200/60 text-slate-800 hover:bg-slate-100 hover:border-slate-300 hover:shadow-sm'
+    success: 'bg-emerald-50 border-emerald-200 text-emerald-700 hover:bg-emerald-100 hover:border-emerald-300',
+    warning: 'bg-amber-50 border-amber-200 text-amber-700 hover:bg-amber-100 hover:border-amber-300',
+    error: 'bg-red-50 border-red-200 text-red-700 hover:bg-red-100 hover:border-red-300',
+    info: 'bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300'
   };
 
   return (
-    <div className={`p-4 rounded-lg border ${variantStyles[variant]} transition-all duration-200`}>
-      <div className="flex items-center space-x-2">
-        <div className="p-1.5 rounded-md bg-white/60 flex-shrink-0">
+    <div className={`p-4 rounded-xl border-2 ${variantStyles[variant]} transition-all duration-200 hover:shadow-lg hover:scale-105`}>
+      <div className="flex items-center space-x-3">
+        <div className="p-2 rounded-lg bg-white/80 flex-shrink-0 shadow-sm">
           {icon}
         </div>
         <div className="flex-1">
-          <div className="text-xs font-semibold uppercase tracking-wide opacity-75">{label}</div>
-          <div className="text-lg font-bold">{value}</div>
+          <div className="text-xs font-bold uppercase tracking-wide opacity-80">{label}</div>
+          <div className="text-xl font-bold">{value}</div>
         </div>
       </div>
     </div>
