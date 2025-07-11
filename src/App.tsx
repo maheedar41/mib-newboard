@@ -327,10 +327,10 @@ const BoardRow: React.FC<{ board: Board }> = ({ board }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-blue-300 group mb-6">
-      <div className="grid grid-cols-12 min-h-[120px]">
-        {/* Board Info Section */}
-        <div className="col-span-3 p-6 bg-gradient-to-r from-slate-50 to-blue-50 border-r border-slate-200">
+    <div className="mb-6">
+      <div className="flex gap-6">
+        {/* Board Info Card */}
+        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-blue-300 group flex-shrink-0 w-80">
           <div className="flex items-start space-x-3">
             <div className={`w-4 h-4 rounded-full ${getStatusColor(board.health.status)} shadow-sm mt-1 flex-shrink-0`}></div>
             <div className="flex-1 min-w-0">
@@ -363,183 +363,189 @@ const BoardRow: React.FC<{ board: Board }> = ({ board }) => {
           </div>
         </div>
 
-        {/* Weekly Metrics W1-W4 */}
-        <div className="col-span-6 p-6">
-          <div className="grid grid-cols-4 gap-3 h-full">
+        {/* Weekly Metrics Card */}
+        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-blue-300 flex-1">
+          <h4 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide text-center">Weekly Metrics</h4>
+          <div className="space-y-3">
             {/* W1 */}
-            <div className="bg-gradient-to-b from-indigo-50 to-indigo-100 rounded-xl p-3 border border-indigo-200">
-              <div className="text-center mb-2">
-                <div className="text-sm font-bold text-indigo-800 uppercase tracking-wide">W1</div>
-                <div className="text-xs text-indigo-600 mb-1">(Jul 14th - Jul 18th)</div>
-                <div className="text-sm font-bold text-indigo-700">Dev: {board.health.w1.devCount}</div>
-              </div>
-              <div className="flex justify-between items-center space-x-1">
-                <div className="text-center">
-                  <div className="text-xs font-bold text-indigo-800">{board.health.w1.bl}</div>
-                  <div className="text-xs text-indigo-600 uppercase">BL</div>
+            <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-4 border border-indigo-200">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="text-sm font-bold text-indigo-800 uppercase tracking-wide">W1</div>
+                  <div className="text-xs text-indigo-600">(Jul 14th - Jul 18th)</div>
+                  <div className="text-sm font-bold text-indigo-700">Dev: {board.health.w1.devCount}</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-indigo-800">{board.health.w1.dr}</div>
-                  <div className="text-xs text-indigo-600 uppercase">DR</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-indigo-800">{board.health.w1.dg}</div>
-                  <div className="text-xs text-indigo-600 uppercase">DG</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-indigo-800">{board.health.w1.pd}</div>
-                  <div className="text-xs text-indigo-600 uppercase">PD</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-indigo-800">{board.health.w1.pl}</div>
-                  <div className="text-xs text-indigo-600 uppercase">PL</div>
+                <div className="flex items-center space-x-4">
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-indigo-800">{board.health.w1.bl}</div>
+                    <div className="text-xs text-indigo-600 uppercase">BL</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-indigo-800">{board.health.w1.dr}</div>
+                    <div className="text-xs text-indigo-600 uppercase">DR</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-indigo-800">{board.health.w1.dg}</div>
+                    <div className="text-xs text-indigo-600 uppercase">DG</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-indigo-800">{board.health.w1.pd}</div>
+                    <div className="text-xs text-indigo-600 uppercase">PD</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-indigo-800">{board.health.w1.pl}</div>
+                    <div className="text-xs text-indigo-600 uppercase">PL</div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* W2 */}
-            <div className="bg-gradient-to-b from-cyan-50 to-cyan-100 rounded-xl p-3 border border-cyan-200">
-              <div className="text-center mb-2">
-                <div className="text-sm font-bold text-cyan-800 uppercase tracking-wide">W2</div>
-                <div className="text-xs text-cyan-600 mb-1">(Jul 21st - Jul 25th)</div>
-                <div className="text-sm font-bold text-cyan-700">Dev: {board.health.w2.devCount}</div>
-              </div>
-              <div className="flex justify-between items-center space-x-1">
-                <div className="text-center">
-                  <div className="text-xs font-bold text-cyan-800">{board.health.w2.bl}</div>
-                  <div className="text-xs text-cyan-600 uppercase">BL</div>
+            <div className="bg-gradient-to-r from-cyan-50 to-cyan-100 rounded-xl p-4 border border-cyan-200">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="text-sm font-bold text-cyan-800 uppercase tracking-wide">W2</div>
+                  <div className="text-xs text-cyan-600">(Jul 21st - Jul 25th)</div>
+                  <div className="text-sm font-bold text-cyan-700">Dev: {board.health.w2.devCount}</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-cyan-800">{board.health.w2.dr}</div>
-                  <div className="text-xs text-cyan-600 uppercase">DR</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-cyan-800">{board.health.w2.dg}</div>
-                  <div className="text-xs text-cyan-600 uppercase">DG</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-cyan-800">{board.health.w2.pd}</div>
-                  <div className="text-xs text-cyan-600 uppercase">PD</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-cyan-800">{board.health.w2.pl}</div>
-                  <div className="text-xs text-cyan-600 uppercase">PL</div>
+                <div className="flex items-center space-x-4">
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-cyan-800">{board.health.w2.bl}</div>
+                    <div className="text-xs text-cyan-600 uppercase">BL</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-cyan-800">{board.health.w2.dr}</div>
+                    <div className="text-xs text-cyan-600 uppercase">DR</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-cyan-800">{board.health.w2.dg}</div>
+                    <div className="text-xs text-cyan-600 uppercase">DG</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-cyan-800">{board.health.w2.pd}</div>
+                    <div className="text-xs text-cyan-600 uppercase">PD</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-cyan-800">{board.health.w2.pl}</div>
+                    <div className="text-xs text-cyan-600 uppercase">PL</div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* W3 */}
-            <div className="bg-gradient-to-b from-teal-50 to-teal-100 rounded-xl p-3 border border-teal-200">
-              <div className="text-center mb-2">
-                <div className="text-sm font-bold text-teal-800 uppercase tracking-wide">W3</div>
-                <div className="text-xs text-teal-600 mb-1">(Jul 28th - Aug 1st)</div>
-                <div className="text-sm font-bold text-teal-700">Dev: {board.health.w3.devCount}</div>
-              </div>
-              <div className="flex justify-between items-center space-x-1">
-                <div className="text-center">
-                  <div className="text-xs font-bold text-teal-800">{board.health.w3.bl}</div>
-                  <div className="text-xs text-teal-600 uppercase">BL</div>
+            <div className="bg-gradient-to-r from-teal-50 to-teal-100 rounded-xl p-4 border border-teal-200">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="text-sm font-bold text-teal-800 uppercase tracking-wide">W3</div>
+                  <div className="text-xs text-teal-600">(Jul 28th - Aug 1st)</div>
+                  <div className="text-sm font-bold text-teal-700">Dev: {board.health.w3.devCount}</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-teal-800">{board.health.w3.dr}</div>
-                  <div className="text-xs text-teal-600 uppercase">DR</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-teal-800">{board.health.w3.dg}</div>
-                  <div className="text-xs text-teal-600 uppercase">DG</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-teal-800">{board.health.w3.pd}</div>
-                  <div className="text-xs text-teal-600 uppercase">PD</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-teal-800">{board.health.w3.pl}</div>
-                  <div className="text-xs text-teal-600 uppercase">PL</div>
+                <div className="flex items-center space-x-4">
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-teal-800">{board.health.w3.bl}</div>
+                    <div className="text-xs text-teal-600 uppercase">BL</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-teal-800">{board.health.w3.dr}</div>
+                    <div className="text-xs text-teal-600 uppercase">DR</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-teal-800">{board.health.w3.dg}</div>
+                    <div className="text-xs text-teal-600 uppercase">DG</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-teal-800">{board.health.w3.pd}</div>
+                    <div className="text-xs text-teal-600 uppercase">PD</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-teal-800">{board.health.w3.pl}</div>
+                    <div className="text-xs text-teal-600 uppercase">PL</div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* W4 */}
-            <div className="bg-gradient-to-b from-rose-50 to-rose-100 rounded-xl p-3 border border-rose-200">
-              <div className="text-center mb-2">
-                <div className="text-sm font-bold text-rose-800 uppercase tracking-wide">W4</div>
-                <div className="text-xs text-rose-600 mb-1">(Aug 4th - Aug 8th)</div>
-                <div className="text-sm font-bold text-rose-700">Dev: {board.health.w4.devCount}</div>
-              </div>
-              <div className="flex justify-between items-center space-x-1">
-                <div className="text-center">
-                  <div className="text-xs font-bold text-rose-800">{board.health.w4.bl}</div>
-                  <div className="text-xs text-rose-600 uppercase">BL</div>
+            <div className="bg-gradient-to-r from-rose-50 to-rose-100 rounded-xl p-4 border border-rose-200">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="text-sm font-bold text-rose-800 uppercase tracking-wide">W4</div>
+                  <div className="text-xs text-rose-600">(Aug 4th - Aug 8th)</div>
+                  <div className="text-sm font-bold text-rose-700">Dev: {board.health.w4.devCount}</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-rose-800">{board.health.w4.dr}</div>
-                  <div className="text-xs text-rose-600 uppercase">DR</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-rose-800">{board.health.w4.dg}</div>
-                  <div className="text-xs text-rose-600 uppercase">DG</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-rose-800">{board.health.w4.pd}</div>
-                  <div className="text-xs text-rose-600 uppercase">PD</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xs font-bold text-rose-800">{board.health.w4.pl}</div>
-                  <div className="text-xs text-rose-600 uppercase">PL</div>
+                <div className="flex items-center space-x-4">
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-rose-800">{board.health.w4.bl}</div>
+                    <div className="text-xs text-rose-600 uppercase">BL</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-rose-800">{board.health.w4.dr}</div>
+                    <div className="text-xs text-rose-600 uppercase">DR</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-rose-800">{board.health.w4.dg}</div>
+                    <div className="text-xs text-rose-600 uppercase">DG</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-rose-800">{board.health.w4.pd}</div>
+                    <div className="text-xs text-rose-600 uppercase">PD</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-rose-800">{board.health.w4.pl}</div>
+                    <div className="text-xs text-rose-600 uppercase">PL</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Health Metrics */}
-        <div className="col-span-3 p-6 bg-gradient-to-r from-slate-50 to-purple-50 border-l border-slate-200">
-          <div className="h-full">
-            <h4 className="text-sm font-bold text-slate-900 mb-3 uppercase tracking-wide text-center">Health Metrics</h4>
-            <div className="grid grid-cols-2 gap-3">
-              <HealthTile
-                label="Velocity"
-                value={`${board.health.velocity}%`}
-                icon={<TrendingUp className="w-3 h-3" />}
-                variant={board.health.velocity >= 80 ? 'success' : board.health.velocity >= 60 ? 'warning' : 'error'}
-              />
-              
-              <HealthTile
-                label="Blockers"
-                value={board.health.blockers}
-                icon={<AlertTriangle className="w-3 h-3" />}
-                variant={board.health.blockers === 0 ? 'success' : board.health.blockers <= 3 ? 'warning' : 'error'}
-              />
-              
-              <HealthTile
-                label="Overdue"
-                value={board.health.overdue}
-                icon={<XCircle className="w-3 h-3" />}
-                variant={board.health.overdue === 0 ? 'success' : board.health.overdue <= 2 ? 'warning' : 'error'}
-              />
-              
-              <HealthTile
-                label="E/S Rate"
-                value={`${board.health.estimationAccuracy}%`}
-                icon={<Target className="w-3 h-3" />}
-                variant={board.health.estimationAccuracy >= 85 ? 'success' : board.health.estimationAccuracy >= 70 ? 'warning' : 'error'}
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-3 mt-3">
-              <HealthTile
-                label="Docs"
-                value={board.health.documentation}
-                icon={<FileText className="w-3 h-3" />}
-                variant="info"
-              />
-              
-              <HealthTile
-                label="Defects"
-                value={board.health.defectRemovalRate}
-                icon={<Bug className="w-3 h-3" />}
-                variant={board.health.defectRemovalRate <= 2 ? 'success' : board.health.defectRemovalRate <= 4 ? 'warning' : 'error'}
-              />
-            </div>
+        {/* Health Metrics Card */}
+        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 hover:shadow-xl transition-all duration-300 hover:border-blue-300 flex-shrink-0 w-96">
+          <h4 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide text-center">Health Metrics</h4>
+          <div className="grid grid-cols-3 gap-3">
+            <HealthTile
+              label="Velocity"
+              value={`${board.health.velocity}%`}
+              icon={<TrendingUp className="w-3 h-3" />}
+              variant={board.health.velocity >= 80 ? 'success' : board.health.velocity >= 60 ? 'warning' : 'error'}
+            />
+            
+            <HealthTile
+              label="Blockers"
+              value={board.health.blockers}
+              icon={<AlertTriangle className="w-3 h-3" />}
+              variant={board.health.blockers === 0 ? 'success' : board.health.blockers <= 3 ? 'warning' : 'error'}
+            />
+            
+            <HealthTile
+              label="Overdue"
+              value={board.health.overdue}
+              icon={<XCircle className="w-3 h-3" />}
+              variant={board.health.overdue === 0 ? 'success' : board.health.overdue <= 2 ? 'warning' : 'error'}
+            />
+            
+            <HealthTile
+              label="E/S Rate"
+              value={`${board.health.estimationAccuracy}%`}
+              icon={<Target className="w-3 h-3" />}
+              variant={board.health.estimationAccuracy >= 85 ? 'success' : board.health.estimationAccuracy >= 70 ? 'warning' : 'error'}
+            />
+            
+            <HealthTile
+              label="Docs"
+              value={board.health.documentation}
+              icon={<FileText className="w-3 h-3" />}
+              variant="info"
+            />
+            
+            <HealthTile
+              label="Defects"
+              value={board.health.defectRemovalRate}
+              icon={<Bug className="w-3 h-3" />}
+              variant={board.health.defectRemovalRate <= 2 ? 'success' : board.health.defectRemovalRate <= 4 ? 'warning' : 'error'}
+            />
           </div>
         </div>
       </div>
